@@ -1,9 +1,11 @@
-import Image from "next/image";
+import Appbar from "../Components/AppBar/AppBar.jsx"
 
-export default function Home() {
+const Home = () => {
   return (
     <div>
-      <h1>Hello world</h1>
+      <Appbar></Appbar>
     </div>
   );
-}
+};
+
+export default Home;
