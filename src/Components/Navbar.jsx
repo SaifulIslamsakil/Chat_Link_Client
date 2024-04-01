@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BiMessageRoundedDots } from "react-icons/bi";
 import { MdOutlineFileDownload } from "react-icons/md";
 const Navbar = () => {
@@ -8,7 +9,7 @@ const Navbar = () => {
         <li>Blog</li>
         <li>For Business</li>
         <li>MyChat Web</li>
-        <li>Register</li>
+        <li><Link href={"/Pages/Register"}>Register</Link></li>
     </>
     return (
         <div className="navbar bg-blue-900 bg-opacity-90 text-blue-50 p-5 fixed max-w-7xl z-50">
