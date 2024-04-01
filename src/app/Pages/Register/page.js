@@ -10,10 +10,10 @@ const Register = () => {
                 <p className=" text-4xl font-bold text-white p-5">We are design changers do what matters.</p>
                 <Image width={200} height={200} className=" w-72 mx-auto" src="https://i.ibb.co/tpBNLXY/man-image-1.png" alt="" />
             </div>
-            <div className="md:w-[70%] bg-gradient-to-r from-blue-100  to-blue-50 p-10 ">
+            <div className="md:w-[70%] bg-gradient-to-r from-blue-100  to-green-50 p-10 ">
                 <div className="space-y-10 lg:w-3/4 mx-auto">
                     <p className=" text-center font-bold text-3xl">Create your Chat Link Account</p>
-                    <p className=" text-center">Already have an account? <Link href={"/"} className=" font-bold">Sign in</Link> </p>
+                    <p className=" text-center">Already have an account? <Link href={"/Pages/Login"} className=" font-bold">Sign in</Link> </p>
                     <button className=" mx-auto p-3 rounded-lg border shadow-lg bg-white flex items-center gap-3 hover:shadow-sm"> <HiOutlineMail className=" text-2xl text-orange-500" /> Sign up with Google</button>
                     <div className="divider">OR</div>
                     <RegisterForm></RegisterForm>

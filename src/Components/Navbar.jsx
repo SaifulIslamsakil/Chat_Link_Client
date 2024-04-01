@@ -3,12 +3,11 @@ import { BiMessageRoundedDots } from "react-icons/bi";
 import { MdOutlineFileDownload } from "react-icons/md";
 const Navbar = () => {
     const manu = <>
-        <li>Features</li>
-        <li>Privacy</li>
-        <li>Help Center</li>
-        <li>Blog</li>
-        <li>For Business</li>
-        <li>MyChat Web</li>
+        <li><Link href={"/Pages/Register"} className=" hover:bg-green-500">Features</Link></li>
+        <li><Link href={"/Pages/Register"} className=" hover:bg-white hover:text-black">Privacy</Link></li>
+        <li><Link href={"/Pages/Register"} className=" hover:bg-blue-400">Help Center</Link></li>
+        <li><Link href={"/Pages/Register"}>Blog</Link></li>
+        <li><Link href={"/Pages/Register"}>For Business</Link></li>
         <li><Link href={"/Pages/Register"}>Register</Link></li>
     </>
     return (
@@ -32,9 +31,6 @@ const Navbar = () => {
                     {manu}
                 </ul>
             </div>
-            {/* <div className="navbar-end">
-                <button className=" py-3 px-6 bg-blue-50 text-black border-0 rounded-full  items-center gap-2 hidden md:flex hover:bg-blue-100 ">Download <span className=" text-2xl"><MdOutlineFileDownload /></span> </button>
-            </div> */}
         </div>
     );
 };
