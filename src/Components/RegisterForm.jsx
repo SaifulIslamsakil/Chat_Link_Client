@@ -3,6 +3,7 @@ import Auth from "@/Firbase/Firbase.confiq";
 import useGetUser from "@/Hooks/useGetUser";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 const RegisterForm = () => {
     const currentUser = useGetUser()
     console.log(currentUser)
@@ -15,10 +16,16 @@ const RegisterForm = () => {
     const handelFormSubmited = (data) => {
         createUserWithEmailAndPassword(Auth,data.email, data.password)
         .then(res=>{
-            alert("ss")
+            Swal.fire({
+                title: "Good job!",
+                text: "You Registation complete!",
+                icon: "success"
+              });
+              
         })
         .catch(err=>{
             alert('fled')
+            reset()
         })
     }
     return (

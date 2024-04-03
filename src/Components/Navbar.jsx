@@ -1,7 +1,10 @@
+"use client"
+import useGetUser from "@/Hooks/useGetUser";
 import Link from "next/link";
 import { BiMessageRoundedDots } from "react-icons/bi";
 import { MdOutlineFileDownload } from "react-icons/md";
 const Navbar = () => {
+    const currentUser = useGetUser()
     const manu = <>
         <li><Link href={"/"} className=" hover:bg-green-500">Home</Link></li>
         <li><Link href={"/Pages/Register"} className=" hover:bg-green-500">Features</Link></li>
@@ -9,7 +12,9 @@ const Navbar = () => {
         <li><Link href={"/Pages/Register"} className=" hover:bg-blue-400">Help Center</Link></li>
         <li><Link href={"/Pages/Register"}>Blog</Link></li>
         <li><Link href={"/Pages/Register"}>For Business</Link></li>
-        <li><Link href={"/Pages/Register"}>Register</Link></li>
+        <li className={`${currentUser ? "block":"hidden"}`}><Link href={"/Pages/MyChat"}>My Chte</Link></li>
+        <li className={`${currentUser? "hidden":"block"}`}><Link href={"/Pages/Register"}>Register</Link></li>
+        
     </>
     return (
         <div className="navbar bg-blue-900 bg-opacity-90 text-blue-50 p-5 fixed max-w-7xl z-50">
