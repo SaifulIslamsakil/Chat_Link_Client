@@ -1,6 +1,11 @@
 "use client"
+import Auth from "@/Firbase/Firbase.confiq";
+import useGetUser from "@/Hooks/useGetUser";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
 const RegisterForm = () => {
+    const currentUser = useGetUser()
+    console.log(currentUser)
     const {
         register,
         reset,
@@ -8,7 +13,13 @@ const RegisterForm = () => {
         formState: { errors },
     } = useForm()
     const handelFormSubmited = (data) => {
-        console.log(data)
+        createUserWithEmailAndPassword(Auth,data.email, data.password)
+        .then(res=>{
+            alert("ss")
+        })
+        .catch(err=>{
+            alert('fled')
+        })
     }
     return (
         <div>
