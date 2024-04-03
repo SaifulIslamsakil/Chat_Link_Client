@@ -12,7 +12,7 @@ const layout = ({ children }) => {
     return (
         <div className=' flex h-screen'>
             <div className=' w-[40%] flex h-full border'>
-                <div className=' border-r shadow-lg px-5 py-10 h-full flex  justify-center'>
+                <div className=' border-r shadow-lg px-5 py-5 h-full flex  justify-center'>
                     <div className=' space-y-10'>
                         <div className="items-centers gap-1 hidden md:flex">
                             <span className=" text-3xl bg-blue-700 text-green-50 rounded-full p-2 flex items-center justify-center"><BiMessageRoundedDots /></span>
@@ -36,7 +36,7 @@ const layout = ({ children }) => {
                         </div>
                     </div>
                 </div>
-                <div className=' bg-slate-50 px-5 py-10 w-full space-y-5'>
+                <div className=' bg-slate-50 px-5 py-5 w-full space-y-5'>
                     <div className=' flex justify-between '>
                         <h2 className=' text-2xl font-semibold'>Chats</h2>
                         <p className=' text-3xl'><HiUserAdd /></p>
@@ -51,22 +51,6 @@ const layout = ({ children }) => {
                     <div className=' space-y-3'>
                         <h3 className='text-lg font-semibold'>Recent</h3>
                         <div className=' space-y-5 overflow-y-scroll'>
-                            <div className=' p-4 rounded-lg hover:bg-slate-200 bg-slate-100 duration-700 flex items-center justify-between border'>
-                                <Image src={"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} width={50} height={50} alt='userImages' className=' rounded-full' />
-                                <div>
-                                    <p className=' text-lg font-semibold'>Saiful islam</p>
-                                    <p>Saiful islam more no it</p>
-                                </div>
-                                <p>05 min</p>
-                            </div>
-                            <div className=' p-4 rounded-lg hover:bg-slate-200 bg-slate-100 duration-700 flex items-center justify-between border'>
-                                <Image src={"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} width={50} height={50} alt='userImages' className=' rounded-full' />
-                                <div>
-                                    <p className=' text-lg font-semibold'>Saiful islam</p>
-                                    <p>Saiful islam more no it</p>
-                                </div>
-                                <p>05 min</p>
-                            </div>
                             <div className=' p-4 rounded-lg hover:bg-slate-200 bg-slate-100 duration-700 flex items-center justify-between border'>
                                 <Image src={"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} width={50} height={50} alt='userImages' className=' rounded-full' />
                                 <div>
