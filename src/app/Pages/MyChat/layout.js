@@ -1,10 +1,13 @@
+import Link from 'next/link';
+import React from 'react';
+
 const layout = ({children}) => {
     return (
-        <div className=" flex gap-4 ">
-            <div>
-                dd
+        <div className=' flex'>
+            <div className=' w-[30%]'>
+                <Link href={"/Pages/Mychat/Messege"}>here</Link>
             </div>
-            <div>
+            <div className='w-[70%]'>
                 {children}
             </div>
         </div>
