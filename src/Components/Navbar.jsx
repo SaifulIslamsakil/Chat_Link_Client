@@ -3,6 +3,7 @@ import { BiMessageRoundedDots } from "react-icons/bi";
 import { MdOutlineFileDownload } from "react-icons/md";
 const Navbar = () => {
     const manu = <>
+        <li><Link href={"/"} className=" hover:bg-green-500">Home</Link></li>
         <li><Link href={"/Pages/Register"} className=" hover:bg-green-500">Features</Link></li>
         <li><Link href={"/Pages/Register"} className=" hover:bg-white hover:text-black">Privacy</Link></li>
         <li><Link href={"/Pages/Register"} className=" hover:bg-blue-400">Help Center</Link></li>
@@ -26,8 +27,8 @@ const Navbar = () => {
                     <p className=" text-3xl font-semibold cursor-pointer">Chat Link</p>
                 </div>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 space-x-5 text-lg cursor-pointer">
+            <div className="navbar-center hidden lg:flex ">
+                <ul className="menu menu-horizontal px-1 space-x-3 text-lg cursor-pointer">
                     {manu}
                 </ul>
             </div>
