@@ -17,7 +17,7 @@ const Messges = () => {
             <div className=" lg:flex justify-between items-center  gap-10 p-10 space-y-10 ">
                 <div className=" flex-1 space-y-8 cursor-pointer lg:px-10">
                     <h3 className=" text-3xl lg:text-6xl font-semibold">Keep in touch with your groups</h3>
-                    <p className=" lg:w-3/4  text-xl">Whether it's planning an outing with friends or simply staying on top of your family chats, group conversations should feel effortless.</p>
+                    <p className=" lg:w-3/4  text-xl">Whether its planning an outing with friends or simply staying on top of your family chats, group conversations should feel effortless.</p>
                     <button className=" flex items-center gap-3 border-b-2 border-green-500 pb-2 hover:text-green-500 ">Learn more <MdArrowForwardIos /> </button>
                 </div>
 

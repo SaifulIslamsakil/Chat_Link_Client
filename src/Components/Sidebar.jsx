@@ -55,7 +55,7 @@ const Sidebar = () => {
                     <h3 className='text-lg font-semibold'>Recent</h3>
                     <div className=' space-y-5 overflow-y-scroll'>
                         {
-                            AllUser.map(user => <Link key={user?._id} href={`http://localhost:3000/Pages/Mychat/${user?._id}`}><div  className=' p-4 rounded-lg hover:bg-slate-200 bg-slate-100 duration-700 flex items-center justify-between border'>
+                            AllUser.map(user => <Link key={user?._id} href={`http://localhost:3000/Pages/Mychat/${user?._id}`}><div  className=' p-4 rounded-lg hover:bg-slate-200 bg-slate-100 duration-700 flex items-center justify-between border mt-3'>
                                 <Image src={"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} width={50} height={50} alt='userImages' className=' rounded-full' />
                                 <div>
                                     <p className=' text-lg font-semibold'>{user?.first_name} {user?.last_name}</p>
