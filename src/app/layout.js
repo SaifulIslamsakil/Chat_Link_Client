@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
+import ReactQueryProvider from "@/Components/ReactQueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,9 +14,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="max-w-7xl mx-auto" >
-        {children}
-      </body>
+      <ReactQueryProvider>
+        <body className="max-w-7xl mx-auto" >
+          {children}
+        </body>
+      </ReactQueryProvider>
     </html>
   );
 }

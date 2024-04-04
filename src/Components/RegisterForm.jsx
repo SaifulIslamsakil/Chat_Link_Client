@@ -1,12 +1,14 @@
 "use client"
 import Auth from "@/Firbase/Firbase.confiq";
+import useAxiosPublic from "@/Hooks/useAxiosPublic";
 import useGetUser from "@/Hooks/useGetUser";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 const RegisterForm = () => {
     const currentUser = useGetUser()
-    console.log(currentUser)
+    const AxiosPublic = useAxiosPublic()
+
     const {
         register,
         reset,
@@ -14,19 +16,30 @@ const RegisterForm = () => {
         formState: { errors },
     } = useForm()
     const handelFormSubmited = (data) => {
-        createUserWithEmailAndPassword(Auth,data.email, data.password)
-        .then(res=>{
-            Swal.fire({
-                title: "Good job!",
-                text: "You Registation complete!",
-                icon: "success"
-              });
-              
-        })
-        .catch(err=>{
-            alert('fled')
-            reset()
-        })
+        createUserWithEmailAndPassword(Auth, data.email, data.password)
+            .then(res => {
+                const userInfo = {
+                    first_name: data.first_name,
+                    last_name: data.last_name,
+                    email: data.email,
+                    pass: data.password,
+                }
+                console.log(userInfo)
+                AxiosPublic.post("/user", userInfo)
+                    .then(res => {
+                        if (res.data.acknowledged){
+                            Swal.fire({
+                                title: "Good job!",
+                                text: "Your registation complete",
+                                icon: "success"
+                              });
+                        }
+               })
+            })
+            .catch(err => {
+                alert('fled')
+                reset()
+            })
     }
     return (
         <div>
