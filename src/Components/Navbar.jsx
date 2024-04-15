@@ -12,7 +12,8 @@ const Navbar = () => {
         <li><Link href={"/Pages/Register"} className=" hover:bg-blue-400">Help Center</Link></li>
         <li><Link href={"/Pages/Register"}>Blog</Link></li>
         <li><Link href={"/Pages/Register"}>For Business</Link></li>
-        <li className={`${currentUser ? "block":"hidden"}`}><Link href={"/Pages/MyChat"}>My Chte</Link></li>
+        {/* <li className={`${currentUser ? "block":"hidden"}`}><Link href={"/Pages/MyChat"}>My Chte</Link></li> */}
+        <li className={`${currentUser? " block":"hidden"}`}><Link href={"Pages/Mychat"}>MyChat</Link></li>
         <li className={`${currentUser? "hidden":"block"}`}><Link href={"/Pages/Register"}>Register</Link></li>
         
     </>
