@@ -7,23 +7,30 @@ import { MdOutlineSettingsVoice } from "react-icons/md";
 import { BsFillSendFill } from "react-icons/bs";
 import { useRef, useState } from 'react';
 import EmojiPiker from './EmojiPiker';
-import data from '@emoji-mart/data'
-import { Picker } from 'emoji-mart';
+import io from 'socket.io-client';
+
 const MessegeUi = () => {
     const sendMessege = useRef(null)
     const [showEmojiPiker, setShowEmojiPiker] = useState(false)
     const [currenEmoji, setCurrenEmoji] = useState(null)
 
-    const handleEmojiSelect = (emoji) => {
-        setCurrenEmoji(message + emoji.native);
-      };
-
-      console.log(currenEmoji)
-
     const handelSendMeggeges = () => {
         const message = sendMessege.current.value;
         alert(message)
+        setCurrenEmoji("")
     }
+
+    const socket = io('http://localhost:5000'); // Connect to the server
+    
+    socket.on('connect', () => {
+      console.log('Connected to server');
+    });
+    
+    socket.on('disconnect', () => {
+      console.log('Disconnected from server');
+    });
+    socket.disconnect();
+
     return (
         <div className=' h-screen'>
             <div className=' border-b shadow-lg p-5  flex items-center justify-between'>
@@ -38,26 +45,19 @@ const MessegeUi = () => {
                     <p className='hover:bg-green-50 p-2 rounded-lg'><BsThreeDotsVertical /></p>
                 </div>
             </div>
-            <div className=' h-3/4 p-5'>
-                <div className=' flex justify-between '>
-                    <div className='mt-10'>
-                        <p className='  rounded-t-full rounded-r-full p-2 bg-blue-500 text-white text-lg'>ssssssssssss</p>
+            <div className=' h-3/4 p-5 space-y-2'>
+                <div className=' flex justify-between  '>
+                    <div className='mt-5'>
+                        <p className='border  rounded-t-full rounded-r-full p-2 bg-blue-500 text-white '>ssssssssssss</p>
                     </div>
                     <div>
-                        <p className='  rounded-t-full rounded-l-full p-2 bg-green-500 text-white text-lg'>ddddddddddd</p>
+                        <p className='  rounded-t-full rounded-l-full p-2 bg-green-500 text-white '>ddddddddddd</p>
                     </div>
                 </div>
-                <div className=' flex justify-between '>
-                    <div className='mt-10'>
-                        <p className='  rounded-t-full rounded-r-full p-2 bg-blue-500 text-white text-lg'>ssssssssssss</p>
-                    </div>
-                    <div>
-                        <p className='  rounded-t-full rounded-l-full p-2 bg-green-500 text-white text-lg'>ddddddddddd</p>
-                    </div>
+             
                    {
                     showEmojiPiker ?  <EmojiPiker setCurrenEmoji={setCurrenEmoji} />: ""
                    }
-                </div>
             </div>
             <div className=' border-t shadow-lg p-5 w-full flex items-center justify-between gap-2 '>
                 <p className=' text-xl bg-green-50 p-3 rounded-lg'><FaPlay /></p>
